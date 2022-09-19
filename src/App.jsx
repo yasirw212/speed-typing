@@ -24,6 +24,7 @@ function startGame(){
   setGame(prev => prev = true)
   setCount(prev => prev = STARTING_TIME)
   setWordCount(0) 
+  setText('') 
   textRef.current.disabled = false
   textRef.current.focus()
 }
