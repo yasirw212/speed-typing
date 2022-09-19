@@ -17,6 +17,10 @@ body {
     font-size: 1.15rem;
 }
 
+textarea:disabled {
+    background-color: #a5a2a2;
+}
+
 .game-btn {
     background: #00b800;
     font-family: 'Press Start 2P';
@@ -24,4 +28,8 @@ body {
     height: 2em;
     border: transparent;
     width: 6.5em;
+}
+
+.game-btn:disabled {
+    cursor: not-allowed;
 }
