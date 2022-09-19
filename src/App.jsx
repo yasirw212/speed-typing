@@ -1,32 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React from 'react'
+let text1 = 'where the hoes '
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = React.useState(10)
+  const [text, setText] = React.useState('')
+  const [wordCount, setWordCount] = React.useState(0)
 
+ function getValue(value){
+   setText(prevValue => prevValue = value)
+ }
+    
+function getWordCount(){
+  const wordsArr = text.trim().split(" ").length
+  console.log(wordsArr)
+  return wordsArr
+}
+React.useEffect(function(){
+  if(count != 0){
+    setTimeout(function(){
+      setCount(prev => prev == 10 ? prev = 9 : prev -= 1)
+    }, 1000)
+  }
+}, [count])
+  
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className='game-container'>
+      <h1>How fast do you type? </h1>
+      <textarea onKeyUp={() => getValue(event.target.value)} className='text-area' />
+      <h3>Time remaining: {count}</h3>
+      <button className='game-btn'>Start</button>
+      <h2>Word count: {wordCount}</h2>
     </div>
   )
 }

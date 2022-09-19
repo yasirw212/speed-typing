@@ -1,0 +1,27 @@
+body {
+    background: black;
+    color: #00b800;
+    font-family: 'Press Start 2P';
+    text-align: center;
+}
+
+.game-container {
+    margin-top: 2em;
+}
+
+.text-area {
+    background: #00b800;
+    height: 50vh;
+    width: 80vw;
+    font-family: 'Press Start 2P';
+    font-size: 1.15rem;
+}
+
+.game-btn {
+    background: #00b800;
+    font-family: 'Press Start 2P';
+    font-size: 1.5rem;
+    height: 2em;
+    border: transparent;
+    width: 6.5em;
+}
