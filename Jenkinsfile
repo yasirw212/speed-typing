@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Pull code from repository'){
             steps {
-                git ('https://github.com/yasirw212/speed-typing.git')
+                git branch: 'main', url: 'https://github.com/yasirw212/speed-typing.git'
                 sh ('npm install')
             }
         }
