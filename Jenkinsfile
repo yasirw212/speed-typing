@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Build'){
             steps {
+                git branch: 'main', url: 'https://github.com/yasirw212/speed-typing.git'
                 sh ('docker build -t webapp:latest .')
             }
         }
