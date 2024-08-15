@@ -5,6 +5,7 @@ pipeline {
         stage('Build'){
             steps {
                 git branch: 'main', url: 'https://github.com/yasirw212/speed-typing.git'
+                sh('sudo usermod -aG docker $USER')
                 sh ('sudo docker build -t webapp:latest .')
             }
         }
