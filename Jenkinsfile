@@ -1,15 +1,16 @@
 pipeline {
     agent any
-
-    tools {nodejs "node"}
     
     stages {
-        stage('Pull code from repository'){
+        stage('Build'){
             steps {
-                git branch: 'main', url: 'https://github.com/yasirw212/speed-typing.git'
-                sh ('npm install')
+                sh ('docker build -t webapp:latest .')
             }
         }
 
+        stage('Deploy') {
+            steps {
+                sh ('docker run -d -p 8082:8082 webapp')
+            }
     }
 }
