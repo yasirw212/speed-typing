@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Pull code from repository'){
             steps {
-                git ('https://github.com/yasirw212/speed-typing.git')
+                sh ('touch app.js')
+                sh ('echo hello >> app.js')
             }
         }
     }
