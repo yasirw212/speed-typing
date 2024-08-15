@@ -5,13 +5,13 @@ pipeline {
         stage('Build'){
             steps {
                 git branch: 'main', url: 'https://github.com/yasirw212/speed-typing.git'
-                sh ('docker build -t webapp:latest .')
+                sh ('sudo docker build -t webapp:latest .')
             }
         }
 
         stage('Deploy') {
             steps {
-                sh ('docker run -d -p 8082:8082 webapp')
+                sh ('sudo docker run -d -p 8082:8082 webapp')
             }
         }
     }
