@@ -11,10 +11,5 @@ pipeline {
             }
         }
 
-        stage('Run Application'){
-            steps {
-                sh ('npm run dev')
-            }
-        }
     }
 }
